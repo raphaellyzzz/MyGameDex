@@ -11,6 +11,7 @@ mygamedex/
 │   ├── assets/               # estáticos
 │   ├── components/           
 │   │   ├── capsule/          # lógica para a "Cápsula do Tempo"
+│   │   ├── home/          # lógica para a "Home"
 │   │   ├── comparator/       # lógica do "Comparador de Títulos"
 │   │   ├── diary/            # lógica para o "Diário de Jogatina"
 │   │   ├── layout/           # componentes de layout (Navbar, Footer, etc.)
