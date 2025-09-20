@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "title": "Hollow Knight",
+    "developer": "Team Cherry",
+    "publisher": "Team Cherry",
+    "release_year": 2017,
+    "genres": ["Metroidvania", "Ação-Aventura", "Indie"],
+    "moods": ["Desafio Mental", "Trilha Sonora", "Ação"],
+    "platforms": ["PC", "Nintendo Switch", "PlayStation 4", "Xbox One"],
+    "short_description": "Um épico de ação e aventura em 2D. Explore um vasto mundo subterrâneo, lute contra criaturas macabras e faça amizade com insetos bizarros.",
+    "images": {
+      "cover": "hollow_knight_cover.webp",
+      "banner": ""
+    },
+    "community_rating": 4.9,
+    "hours_played": 0,
+    "tags": []
+  },
+  {
+    "id": 2,
+    "title": "Outer Wilds",
+    "developer": "Mobius Digital",
+    "publisher": "Annapurna Interactive",
+    "release_year": 2019,
+    "genres": ["Exploração", "Mistério", "Aventura", "Indie"],
+    "moods": ["Trilha Sonora", "Desafio Mental", "Tranquila"],
+    "platforms": ["PC", "PlayStation 4", "Xbox One", "Nintendo Switch"],
+    "short_description": "Explore um sistema solar em um ciclo de tempo de 22 minutos, descobrindo segredos antigos antes que o sol exploda.",
+    "images": {
+      "cover": "outer_wilds_cover.jpg",
+      "banner": ""
+    },
+    "community_rating": 4.8,
+    "hours_played": 0,
+    "tags": []
+  },
+  {
+    "id": 3,
+    "title": "Katana ZERO",
+    "developer": "Askiisoft",
+    "publisher": "Devolver Digital",
+    "release_year": 2019,
+    "genres": ["Plataforma", "Ação", "Indie"],
+    "moods": ["Ação", "Rápido"],
+    "platforms": ["PC", "Nintendo Switch", "Xbox One"],
+    "short_description": "Um estiloso jogo de plataforma de ação neo-noir, com combate rápido e uma narrativa enigmática.",
+    "images": {
+      "cover": "katana_zero_cover.jpg",
+      "banner": ""
+    },
+    "community_rating": 4.7,
+    "hours_played": 0,
+    "tags": []
+  },
+  {
+    "id": 4,
+    "title": "Hollow Knight: Silksong",
+    "developer": "Team Cherry",
+    "publisher": "Team Cherry",
+    "release_year": 2024,
+    "genres": ["Metroidvania", "Ação-Aventura", "Indie"],
+    "moods": ["Desafio Mental", "Trilha Sonora", "Ação"],
+    "platforms": ["PC", "Nintendo Switch", "PlayStation 5", "Xbox Series X|S"],
+    "short_description": "A aguardada sequência de Hollow Knight. Jogue como a valente Hornet e explore um novo reino com habilidades de combate únicas.",
+    "images": {
+      "cover": "silksong_cover.jpg",
+      "banner": ""
+    },
+    "community_rating": 5.0,
+    "hours_played": 0,
+    "tags": []
+  },
+  {
+    "id": 5,
+    "title": "Dark Souls III",
+    "developer": "FromSoftware",
+    "publisher": "Bandai Namco Entertainment",
+    "release_year": 2016,
+    "genres": ["RPG de Ação", "Aventura"],
+    "moods": ["Desafio Mental", "Desafio Extremo", "Ação"],
+    "platforms": ["PC", "PlayStation 4", "Xbox One"],
+    "short_description": "O fim da série Dark Souls. Explore um mundo sombrio, enfrente inimigos colossais e desvende o mistério do Lorde das Cinzas.",
+    "images": {
+      "cover": "dark_souls_3_cover.jpg",
+      "banner": ""
+    },
+    "community_rating": 4.8,
+    "hours_played": 0,
+    "tags": []
+  }
+]
