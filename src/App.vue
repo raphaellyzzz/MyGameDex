@@ -1,31 +1,33 @@
 <template>
-  <div id="app">
-    <Header />
-    <Banner />
-    <Gamelist />
-  </div>
+  <component :is="layoutComponent">
+    <router-view />
+  </component>
 </template>
 
-<script>
-import Header from './components/layout/Header.vue';
-import Banner from './components/home/Banner.vue';
-import Gamelist from './components/home/Gamelist.vue';
+<script setup>
+import { computed } from 'vue';
+import { useRoute } from 'vue-router';
+import DefaultLayout from './components/layout/DefaultLayout.vue';
+import AuthLayout from './components/layout/AuthLayout.vue';
 
-export default {
-  name: 'App',
-  components: {
-    Header,
-    Banner,
-    Gamelist
-  }
+const route = useRoute();
+
+const layouts = {
+  DefaultLayout,
+  AuthLayout,
 };
+
+const layoutComponent = computed(() => {
+  const layoutName = route.meta.layout || 'DefaultLayout';
+  return layouts[layoutName];
+});
 </script>
 
 <style>
-body {
-  font-family: sans-serif;
-  background-color: #f0f0f0;
+body, html {
   margin: 0;
   padding: 0;
+  font-family: sans-serif;
+  background-color: #f0f0f0; 
 }
 </style>
