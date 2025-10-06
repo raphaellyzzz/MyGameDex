@@ -63,10 +63,8 @@
     max-width: 400px;
     padding: 40px;
     text-align: center;
-    
     background: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(10px);
-    
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 15px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -97,13 +95,15 @@
     padding: 12px;
     font-size: 1rem;
     color: #fff;
-    
     background-color: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 8px;
-    
     outline: none;
     transition: border-color 0.3s;
+    box-sizing: border-box;
+    display: block;
+    margin-left: 0;
+    margin-right: 0;
     }
 
     input:focus {
