@@ -34,15 +34,17 @@ export default {
 
 <style scoped>
 .game-list-section {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
+  display: grid; 
+  grid-template-columns: repeat(6, 1fr); 
+  gap: 25px; 
   padding: 40px 50px;
+  max-width: 1450px;
+  margin: 0 auto;
 }
 
 .game-card {
-  width: 200px;
-  height: 300px; 
+  width: 100%; 
+  aspect-ratio: 2 / 3; 
   border-radius: 8px;
   overflow: hidden; 
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -50,7 +52,7 @@ export default {
 }
 
 .game-card:hover {
-  transform: translateY(-5px);
+  transform: scale(1.05);
 }
 
 .game-card img {
