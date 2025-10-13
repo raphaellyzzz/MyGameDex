@@ -100,7 +100,7 @@
     "platforms": ["PC", "PlayStation 4", "Xbox One", "Nintendo Switch"],
     "short_description": "Como o bruxo Geralt de Rívia, cace monstros, explore um vasto mundo de fantasia e tome decisões que moldam o destino de reinos.",
     "images": {
-      "cover": "the_witcher_3_cover.jpg",
+      "cover": "the_witcher_3_cover.avif",
       "banner": ""
     },
     "community_rating": 4.9,
@@ -118,7 +118,7 @@
     "platforms": ["PC", "PlayStation 4", "Xbox One"],
     "short_description": "Uma história épica sobre honra e lealdade no alvorecer da era moderna na América. Jogue como Arthur Morgan, um fora da lei em uma gangue em declínio.",
     "images": {
-      "cover": "red_dead_redemption_2_cover.jpg",
+      "cover": "red_dead_redemption_2_cover.webp",
       "banner": ""
     },
     "community_rating": 4.9,
@@ -136,7 +136,7 @@
     "platforms": ["PC", "Nintendo Switch", "PlayStation 4", "Xbox One"],
     "short_description": "Ajude Madeline a sobreviver aos seus demônios internos em sua jornada até o topo da Montanha Celeste, neste jogo de plataforma super afiado e feito à mão.",
     "images": {
-      "cover": "celeste_cover.jpg",
+      "cover": "celeste_cover.png",
       "banner": ""
     },
     "community_rating": 4.8,
@@ -154,7 +154,7 @@
     "platforms": ["PlayStation 4", "PC"],
     "short_description": "Com seu filho Atreus, Kratos se aventura pelas terras nórdicas para cumprir uma promessa, enfrentando deuses e monstros em uma jornada pessoal.",
     "images": {
-      "cover": "god_of_war_cover.jpg",
+      "cover": "god_of_war_cover.jpeg",
       "banner": ""
     },
     "community_rating": 4.9,
@@ -226,7 +226,7 @@
     "platforms": ["Nintendo Switch", "Wii U"],
     "short_description": "Esqueça tudo o que sabe sobre os jogos The Legend of Zelda. Viaje por campos, florestas e picos de montanhas para descobrir o que aconteceu com o reino de Hyrule.",
     "images": {
-      "cover": "zelda_botw_cover.jpg",
+      "cover": "zelda_botw_cover.png",
       "banner": ""
     },
     "community_rating": 4.8,
@@ -244,7 +244,7 @@
     "platforms": ["PlayStation 4"],
     "short_description": "Cace seus pesadelos. Viaje para a cidade gótica de Yharnam, amaldiçoada com uma estranha doença endêmica. O perigo e a morte se escondem em cada esquina.",
     "images": {
-      "cover": "bloodborne_cover.jpg",
+      "cover": "bloodborne_cover.png",
       "banner": ""
     },
     "community_rating": 4.8,
@@ -262,7 +262,7 @@
     "platforms": ["PC", "PlayStation", "Xbox", "Nintendo Switch"],
     "short_description": "Um RPG de mundo aberto revolucionário. Você é um detetive com um sistema de habilidades único à sua disposição e um quarteirão inteiro para desbravar.",
     "images": {
-      "cover": "disco_elysium_cover.jpg",
+      "cover": "disco_elysium_cover.webp",
       "banner": ""
     },
     "community_rating": 4.7,
@@ -280,7 +280,7 @@
     "platforms": ["PC", "PlayStation 4", "Xbox One"],
     "short_description": "Explore o Japão no período Sengoku do final do século XVI, um período brutal de conflitos constantes de vida ou morte, enquanto você fica frente a frente com inimigos gigantescos.",
     "images": {
-      "cover": "sekiro_cover.jpg",
+      "cover": "sekiro_cover.png",
       "banner": ""
     },
     "community_rating": 4.8,
@@ -316,7 +316,7 @@
     "platforms": ["PC", "PlayStation 4", "Nintendo Switch", "Xbox One"],
     "short_description": "O RPG onde ninguém precisa morrer. Explore um mundo mágico cheio de monstros, onde a violência não é a única resposta.",
     "images": {
-      "cover": "undertale_cover.jpg",
+      "cover": "undertale_cover.webp",
       "banner": ""
     },
     "community_rating": 4.8,
@@ -352,7 +352,7 @@
     "platforms": ["PC", "PlayStation 4", "PlayStation 5", "Xbox One", "Xbox Series X|S"],
     "short_description": "Uma história de ação e aventura de mundo aberto ambientada em Night City, uma megalópole obcecada por poder, glamour e modificação corporal.",
     "images": {
-      "cover": "cyberpunk_2077_cover.jpg",
+      "cover": "cyberpunk_2077_cover.jpeg",
       "banner": ""
     },
     "community_rating": 4.5,
@@ -370,7 +370,7 @@
     "platforms": ["PC", "PlayStation 4", "Xbox One", "Mobile"],
     "short_description": "Max Caulfield, uma estudante de fotografia, descobre que pode voltar no tempo. Ela e sua amiga Chloe investigam o desaparecimento misterioso de outra estudante.",
     "images": {
-      "cover": "life_is_strange_cover.jpg",
+      "cover": "life_is_strange_cover.webp",
       "banner": ""
     },
     "community_rating": 4.7,
@@ -424,7 +424,7 @@
     "platforms": ["PC", "Xbox One", "Xbox Series X|S"],
     "short_description": "Um brutal jogo de exploração e sobrevivência para até 10 jogadores, ambientado em um purgatório gerado proceduralmente e inspirado na cultura viking.",
     "images": {
-      "cover": "valheim_cover.jpg",
+      "cover": "valheim_cover.webp",
       "banner": ""
     },
     "community_rating": 4.6,
