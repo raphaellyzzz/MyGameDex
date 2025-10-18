@@ -1,35 +1,56 @@
 <template>
   <section class="game-list-section">
-    <div v-for="game in games" :key="game.id" class="game-card">
+    <div v-for="game in filteredGames" :key="game.id" class="game-card">
       <img :src="getCoverImage(game.images.cover)" :alt="game.title">
+    </div>
+
+    <div v-if="filteredGames.length === 0 && searchText" class="no-results">
+      <p>Nenhum jogo encontrado para "{{ searchText }}".</p>
     </div>
   </section>
 </template>
 
 <script>
-import gamesData from '../../api/games.json';
+  import gamesData from '../../api/games.json';
+  import { mapState } from 'pinia';
+  import { useSearchStore } from '../../stores/searchStore';
 
-const images = {};
-const modules = import.meta.glob('../../assets/game_covers/*', { eager: true });
+  const images = {};
+  const modules = import.meta.glob('../../assets/game_covers/*', { eager: true });
 
-for (const path in modules) {
-  const fileName = path.split('/').pop();
-  images[fileName] = modules[path].default;
-}
+  for (const path in modules) {
+    const fileName = path.split('/').pop();
+    images[fileName] = modules[path].default;
+  }
 
-export default {
-  name: 'GameList',
-  data() {
-    return {
-      games: gamesData,
-    };
-  },
-  methods: {
-    getCoverImage(imageName) {
-      return images[imageName];
+  export default {
+    name: 'GameList',
+    data() {
+      return {
+        games: gamesData,
+      };
     },
-  },
-};
+    methods: {
+      getCoverImage(imageName) {
+        return images[imageName];
+      },
+    },
+    computed: {
+      ...mapState(useSearchStore, ['searchText']),
+
+      filteredGames() {
+        if (!this.searchText) {
+          return this.games;
+        }
+        
+        const query = this.searchText.trim().toLowerCase();
+
+        return this.games.filter(game =>
+          game.title.toLowerCase().startsWith(query)
+        );
+      },
+    },
+  };
 </script>
 
 <style scoped>
@@ -60,5 +81,13 @@ export default {
   height: 100%;
   display: block;
   object-fit: cover; 
+}
+
+.no-results {
+  grid-column: 1 / -1; 
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 1.2rem;
+  color: #ccc;
 }
 </style>
