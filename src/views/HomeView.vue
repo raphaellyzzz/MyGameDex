@@ -31,7 +31,7 @@ export default {
 
 <style scoped>
 .results-title {
-  color: white;
+  color: black;
   text-align: center;
   font-size: 1.5rem;
   margin-bottom: 20px;
