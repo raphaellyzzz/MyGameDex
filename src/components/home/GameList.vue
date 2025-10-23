@@ -4,6 +4,7 @@
       v-for="game in filteredGames" 
       :key="game.id" 
       class="game-card"
+      @click="openModal(game)"
     >
       <img :src="getCoverImage(game.images.cover)" :alt="game.title">
       <div class="overlay">
@@ -14,6 +15,12 @@
     <div v-if="filteredGames.length === 0 && searchText" class="no-results">
       <p>Nenhum jogo encontrado para "{{ searchText }}".</p>
     </div>
+
+    <GameModal 
+      v-if="selectedGame" 
+      :game="selectedGame" 
+      @close="closeModal" 
+    />
   </section>
 </template>
 
@@ -21,10 +28,11 @@
   import gamesData from '../../api/games.json';
   import { mapState } from 'pinia';
   import { useSearchStore } from '../../stores/searchStore';
+  import GameModal from './GameModal.vue';
 
   const images = {};
   const modules = import.meta.glob('../../assets/game_covers/*', { eager: true });
-
+  
   for (const path in modules) {
     const fileName = path.split('/').pop();
     images[fileName] = modules[path].default;
@@ -32,15 +40,27 @@
 
   export default {
     name: 'GameList',
+    components: {
+      GameModal 
+    },
     data() {
       return {
         games: gamesData,
+        selectedGame: null 
       };
     },
     methods: {
       getCoverImage(imageName) {
         return images[imageName];
       },
+
+      openModal(game) {
+        this.selectedGame = game;
+      },
+
+      closeModal() {
+        this.selectedGame = null;
+      }
     },
     computed: {
       ...mapState(useSearchStore, ['searchText']),
@@ -48,9 +68,9 @@
         if (!this.searchText) {
           return this.games;
         }
-        
+
         const query = this.searchText.trim().toLowerCase();
-        
+
         return this.games.filter(game =>
           game.title.toLowerCase().startsWith(query)
         );
@@ -102,7 +122,7 @@
     justify-content: center;
     align-items: center;
     opacity: 0; 
-    transition: opacity 0.4s ease;
+    transition: opacity 0.3s ease;
     text-align: center;
   }
 
