@@ -5,27 +5,26 @@
       <form @submit.prevent="handleRegister">
         <div class="input-group">
           <label for="name">Nome completo</label>
-          <input type="text" id="name" v-model="name" required />
+          <input type="text" id="name" v-model="name" />
+          <p v-if="erros.name" class="erro">{{ erros.name }}</p>
         </div>
 
         <div class="input-group">
           <label for="email">Email</label>
-          <input type="email" id="email" v-model="email" required />
+          <input type="email" id="email" v-model="email" />
+          <p v-if="erros.email" class="erro">{{ erros.email }}</p>
         </div>
 
         <div class="input-group">
           <label for="password">Senha</label>
-          <input type="password" id="password" v-model="password" required />
+          <input type="password" id="password" v-model="password" />
+          <p v-if="erros.password" class="erro">{{ erros.password }}</p>
         </div>
 
         <div class="input-group">
           <label for="confirmPassword">Confirmar senha</label>
-          <input
-            type="password"
-            id="confirmPassword"
-            v-model="confirmPassword"
-            required
-          />
+          <input type="password" id="confirmPassword" v-model="confirmPassword" />
+          <p v-if="erros.confirmPassword" class="erro">{{ erros.confirmPassword }}</p>
         </div>
 
         <button type="submit">Cadastrar</button>
@@ -49,6 +48,7 @@ const name = ref("");
 const email = ref("");
 const password = ref("");
 const confirmPassword = ref("");
+const erros = ref({});
 const router = useRouter();
 
 const handleRegister = () => {
@@ -57,11 +57,20 @@ const handleRegister = () => {
     return;
   }
 
-  console.log("Novo cadastro:", {
+  const users = JSON.parse(localStorage.getItem("users")) || [];
+
+  if (users.some((u) => u.email === email.value)) {
+    alert("Este email já está cadastrado!");
+    return;
+  }
+
+  users.push({
     name: name.value,
     email: email.value,
     password: password.value,
   });
+
+  localStorage.setItem("users", JSON.stringify(users));
 
   alert("Cadastro realizado com sucesso!");
   router.push("/login");
@@ -126,12 +135,16 @@ input {
   transition: border-color 0.3s;
   box-sizing: border-box;
   display: block;
-  margin-left: 0;
-  margin-right: 0;
 }
 
 input:focus {
   border-color: #7b4dff;
+}
+
+.erro {
+  color: #ff8c8c;
+  font-size: 0.9rem;
+  margin-top: 5px;
 }
 
 button {
@@ -140,11 +153,9 @@ button {
   font-size: 1.1rem;
   font-weight: 500;
   color: #fff;
-
   background-color: #583c9e;
   border: none;
   border-radius: 8px;
-
   cursor: pointer;
   transition: background-color 0.3s;
 }

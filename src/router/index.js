@@ -21,7 +21,13 @@ const routes = [
     name: 'cadastro',
     component: Cadastro,
     meta: { layout: 'AuthLayout' } 
-  }
+  },
+  {
+  path: '/dashboard',
+  name: 'Dashboard',
+  component: () => import('../views/Dashboard.vue'),
+  meta: { requiresAuth: true }
+},
 ]
 
 const router = createRouter({
