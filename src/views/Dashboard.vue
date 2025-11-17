@@ -1,91 +1,102 @@
 <template>
-  <div class="dashboard-page">
-    <div class="dashboard-box">
-      <h1>Bem-vindo(a), {{ userName }}</h1>
-      <p class="info">Você está conectado com o email <strong>{{ userEmail }}</strong>.</p>
+  <div class="dashboard">
+    <aside class="sidebar">
+      <h2 class="sidebar-title">Funcionalidades</h2>
+      <ul>
+        <li v-for="feature in features" :key="feature.title" class="sidebar-item">
+          {{ feature.title }}
+        </li>
+      </ul>
+    </aside>
 
-      <div class="actions">
-        <button @click="handleLogout">Sair</button>
+    <main class="main-content">
+      <div class="welcome-text">
+        <h1>Bem-vindo(a), {{ userName }}</h1>
+        <p class="subtitle">Explore suas funcionalidades no painel ao lado.</p>
       </div>
-    </div>
+    </main>
   </div>
 </template>
 
 <script setup>
-import { ref, onMounted } from "vue";
-import { useRouter } from "vue-router";
+import { ref } from 'vue'
 
-const router = useRouter();
-const userName = ref("");
-const userEmail = ref("");
+const userName = ref(localStorage.getItem('userName') || 'Usuário')
 
-onMounted(() => {
-  const loggedUser = JSON.parse(localStorage.getItem("loggedUser"));
-  if (!loggedUser) {
-    router.push("/login");
-  } else {
-    userName.value = loggedUser.name;
-    userEmail.value = loggedUser.email;
-  }
-});
-
-const handleLogout = () => {
-  localStorage.removeItem("loggedUser");
-  router.push("/login");
-};
+const features = ref([
+  { title: 'Comparar Jogos' },
+  { title: 'Listas Personalizadas' },
+  { title: 'Mapa de Gêneros' },
+  { title: 'Conquistas' },
+  { title: 'Ranking' },
+  { title: 'Desafio Aleatório' }
+])
 </script>
 
 <style scoped>
-.dashboard-page {
+@import url('https://fonts.googleapis.com/css2?family=Jersey+10&display=swap');
+
+.dashboard {
+  display: flex;
+  min-height: 100vh;
+  background-color: #121212;
+  color: white;
+  font-family: 'Jersey 10', sans-serif;
+}
+
+.sidebar {
+  width: 320px;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(10px);
+  padding: 40px 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-title {
+  font-size: 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 12px;
+  margin-bottom: 10px;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.sidebar-item {
+  list-style: none;
+  padding: 15px 20px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+
+.sidebar-item:hover {
+  background: rgba(255, 255, 255, 0.18);
+  transform: translateX(5px);
+}
+
+.main-content {
+  flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  min-height: 100vh;
-  color: #fff;
-  background-image: url("../assets/background_login.webp");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-}
-
-.dashboard-box {
-  width: 100%;
-  max-width: 500px;
-  padding: 40px;
   text-align: center;
-  background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 15px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
-h1 {
+.welcome-text h1 {
+  font-size: 2.8rem;
   margin-bottom: 15px;
-  font-size: 2.2rem;
-  font-weight: 400;
+  letter-spacing: 1px;
 }
 
-.info {
-  margin-bottom: 30px;
-  font-size: 1.1rem;
-  color: rgba(255, 255, 255, 0.85);
-}
-
-.actions button {
-  padding: 12px 20px;
-  font-size: 1.1rem;
-  font-weight: 500;
-  color: #fff;
-  background-color: #583c9e;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.actions button:hover {
-  background-color: #493182;
+.subtitle {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.2rem;
 }
 </style>

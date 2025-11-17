@@ -31,7 +31,6 @@ header {
   background-color: #1C1D1D;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   color: white; 
-  margin-bottom: 20px;
 }
 
 .logo-text {

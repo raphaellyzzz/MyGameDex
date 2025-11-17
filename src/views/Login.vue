@@ -49,8 +49,9 @@ const handleLogin = () => {
     return;
   }
 
-  // Salva o usuário logado
   localStorage.setItem("loggedUser", JSON.stringify(foundUser));
+
+  localStorage.setItem("userName", foundUser.name);
 
   alert(`Bem-vindo(a), ${foundUser.name}!`);
   router.push("/dashboard");
