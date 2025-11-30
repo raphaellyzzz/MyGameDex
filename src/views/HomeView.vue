@@ -4,9 +4,8 @@
 
     <h2 v-if="searchText" class="results-title">
       Resultados para "{{ searchText }}"
-    </h2>
-
-    <GameList />
+    </h2> 
+    
   </div>
 </template>
 
