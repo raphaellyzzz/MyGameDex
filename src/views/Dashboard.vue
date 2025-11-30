@@ -10,16 +10,17 @@
     </aside>
 
     <main class="main-content">
-      <div class="welcome-text">
-        <h1>Bem-vindo(a), {{ userName }}</h1>
-        <p class="subtitle">Explore suas funcionalidades no painel ao lado.</p>
-      </div>
+      
+
+      <GameList />
     </main>
   </div>
 </template>
 
 <script setup>
 import { ref } from 'vue'
+import GameModal from '../components/home/GameModal.vue';
+import GameList from '../components/home/GameList.vue';
 
 const userName = ref(localStorage.getItem('userName') || 'Usuário')
 
@@ -29,7 +30,9 @@ const features = ref([
   { title: 'Mapa de Gêneros' },
   { title: 'Conquistas' },
   { title: 'Ranking' },
-  { title: 'Desafio Aleatório' }
+  { title: 'Desafio Aleatório' },
+  { title: 'Diário de Jogatina'},
+  { title: 'Sair' }
 ])
 </script>
 
@@ -73,7 +76,8 @@ const features = ref([
   cursor: pointer;
   text-align: center;
   font-size: 1.2rem;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
+  margin-right: 35px;
 }
 
 .sidebar-item:hover {

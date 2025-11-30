@@ -59,6 +59,8 @@ export default {
 </script>
 
 <style scoped>
+  @import url('https://fonts.googleapis.com/css2?family=Jersey+10&display=swap');
+  
     .modal-overlay {
       position: fixed;
       top: 0;
