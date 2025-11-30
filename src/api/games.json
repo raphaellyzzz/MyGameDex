@@ -294,7 +294,7 @@
     "publisher": "SEGA",
     "release_year": 2019,
     "genres": ["RPG", "JRPG"],
-    "moods": ["Estiloso", "Trilha Sonora", "História Rica"],
+    "moods": ["Estiloso", "Trilha Sonora", "História Rica", "JRPG"],
     "platforms": ["PlayStation 4", "PlayStation 5", "PC", "Xbox", "Nintendo Switch"],
     "short_description": "Prepare-se para uma experiência de RPG totalmente nova em Persona 5 Royal, baseada no universo da premiada série Persona! Coloque a máscara do Coringa e junte-se aos Ladrões-Fantasma de Copas.",
     "images": {
@@ -430,5 +430,113 @@
     "community_rating": 4.6,
     "hours_played": 0,
     "tags": []
+  },
+  {
+    "id": 25,
+    "title": "Danganronpa: Trigger Happy Havoc",
+    "developer": "Spike Chunsoft",
+    "publisher": "Spike Chunsoft",
+    "release_year": 2010,
+    "genres": ["Visual Novel", "Aventura"],
+    "moods": ["Desafio Mental", "Mistério", "História Rica"],
+    "platforms": ["PC", "PlayStation Vita", "PlayStation 4", "Mobile"],
+    "short_description": "Hope's Peak Academy é o lar dos melhores estudantes do Japão... e o palco de um jogo mortal. Investigue assassinatos e descubra quem é o culpado.",
+    "images": {
+      "cover": "danganronpa_cover.jpg",
+      "banner": ""
+    },
+    "community_rating": 4.8,
+    "hours_played": 0,
+    "tags": ["Anime", "Detetive"]
+  },
+  {
+    "id": 26,
+    "title": "Chrono Trigger",
+    "developer": "Square",
+    "publisher": "Square Enix",
+    "release_year": 1995,
+    "genres": ["JRPG"],
+    "moods": ["JRPG", "Clássico", "Trilha Sonora", "Viagem no Tempo"],
+    "platforms": ["SNES", "PlayStation", "PC", "Nintendo DS", "Mobile"],
+    "short_description": "Um clássico atemporal. Viaje pelo passado, presente e futuro para impedir que o mundo seja destruído por Lavos.",
+    "images": {
+      "cover": "chrono_trigger_cover.jpg",
+      "banner": ""
+    },
+    "community_rating": 5.0,
+    "hours_played": 0,
+    "tags": ["Turn-Based", "Pixel Art"]
+  },
+  {
+    "id": 27,
+    "title": "Final Fantasy VII",
+    "developer": "Square",
+    "publisher": "Square Enix",
+    "release_year": 1997,
+    "genres": ["JRPG"],
+    "moods": ["JRPG", "Clássico", "Emocional", "História Rica"],
+    "platforms": ["PlayStation", "PC", "Switch", "Xbox One"],
+    "short_description": "Cloud Strife, um ex-soldado da SHINRA, junta-se ao grupo eco-terrorista AVALANCHE para lutar contra a corporação que está drenando a vida do planeta.",
+    "images": {
+      "cover": "ff7_cover.jpg",
+      "banner": ""
+    },
+    "community_rating": 4.9,
+    "hours_played": 0,
+    "tags": ["Sci-Fi", "Turn-Based"]
+  },
+  {
+    "id": 28,
+    "title": "Super Mario World",
+    "developer": "Nintendo",
+    "publisher": "Nintendo",
+    "release_year": 1990,
+    "genres": ["Plataforma"],
+    "moods": ["Retrô", "Clássico", "Tranquila", "Família"],
+    "platforms": ["SNES", "GBA", "Switch Online"],
+    "short_description": "A estreia do Mario no SNES. Voe com a Capa de Pena e conheça Yoshi nesta aventura de plataforma definitiva.",
+    "images": {
+      "cover": "super_mario_world_cover.jpg",
+      "banner": ""
+    },
+    "community_rating": 5.0,
+    "hours_played": 0,
+    "tags": ["2D", "Pixel Art"]
+  },
+  {
+    "id": 29,
+    "title": "Castlevania: Symphony of the Night",
+    "developer": "Konami",
+    "publisher": "Konami",
+    "release_year": 1997,
+    "genres": ["Metroidvania", "Ação-Aventura"],
+    "moods": ["Retrô", "Clássico", "Exploração", "Trilha Sonora"],
+    "platforms": ["PlayStation", "Sega Saturn", "Mobile"],
+    "short_description": "Explore o castelo do Drácula como Alucard neste jogo que definiu o gênero Metroidvania com sua jogabilidade profunda e atmosfera gótica.",
+    "images": {
+      "cover": "castlevania_sotn_cover.jpg",
+      "banner": ""
+    },
+    "community_rating": 4.9,
+    "hours_played": 0,
+    "tags": ["Gothic", "Vampire"]
+  },
+  {
+    "id": 30,
+    "title": "Dragon Quest XI S",
+    "developer": "Square Enix",
+    "publisher": "Square Enix",
+    "release_year": 2017,
+    "genres": ["JRPG"],
+    "moods": ["JRPG", "Fantasia", "Tranquila", "História Rica"],
+    "platforms": ["PC", "PS4", "Xbox One", "Switch"],
+    "short_description": "O herói perseguido deve desvendar o mistério de seu destino com a ajuda de um elenco carismático de personagens secundários.",
+    "images": {
+      "cover": "dragon_quest_11_cover.jpg",
+      "banner": ""
+    },
+    "community_rating": 4.8,
+    "hours_played": 0,
+    "tags": ["Turn-Based", "Anime"]
   }
 ]
