@@ -460,7 +460,7 @@
     "platforms": ["SNES", "PlayStation", "PC", "Nintendo DS", "Mobile"],
     "short_description": "Um clássico atemporal. Viaje pelo passado, presente e futuro para impedir que o mundo seja destruído por Lavos.",
     "images": {
-      "cover": "chrono_trigger_cover.jpg",
+      "cover": "chrono_trigger_cover.png",
       "banner": ""
     },
     "community_rating": 5.0,
@@ -478,7 +478,7 @@
     "platforms": ["PlayStation", "PC", "Switch", "Xbox One"],
     "short_description": "Cloud Strife, um ex-soldado da SHINRA, junta-se ao grupo eco-terrorista AVALANCHE para lutar contra a corporação que está drenando a vida do planeta.",
     "images": {
-      "cover": "ff7_cover.jpg",
+      "cover": "ff7_cover.png",
       "banner": ""
     },
     "community_rating": 4.9,
@@ -496,7 +496,7 @@
     "platforms": ["SNES", "GBA", "Switch Online"],
     "short_description": "A estreia do Mario no SNES. Voe com a Capa de Pena e conheça Yoshi nesta aventura de plataforma definitiva.",
     "images": {
-      "cover": "super_mario_world_cover.jpg",
+      "cover": "super_mario_world_cover.webp",
       "banner": ""
     },
     "community_rating": 5.0,
@@ -514,7 +514,7 @@
     "platforms": ["PlayStation", "Sega Saturn", "Mobile"],
     "short_description": "Explore o castelo do Drácula como Alucard neste jogo que definiu o gênero Metroidvania com sua jogabilidade profunda e atmosfera gótica.",
     "images": {
-      "cover": "castlevania_sotn_cover.jpg",
+      "cover": "castlevania_sotn_cover.webp",
       "banner": ""
     },
     "community_rating": 4.9,
@@ -532,7 +532,7 @@
     "platforms": ["PC", "PS4", "Xbox One", "Switch"],
     "short_description": "O herói perseguido deve desvendar o mistério de seu destino com a ajuda de um elenco carismático de personagens secundários.",
     "images": {
-      "cover": "dragon_quest_11_cover.jpg",
+      "cover": "dragon_quest_11_cover.webp",
       "banner": ""
     },
     "community_rating": 4.8,

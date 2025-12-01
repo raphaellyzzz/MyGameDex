@@ -29,18 +29,16 @@
 
   import GameList from '../components/home/GameList.vue';
   import RecommendationsView from './RecommendationsView.vue'; 
-import ComparatorView from './ComparatorView.vue';
+  import ComparatorView from './ComparatorView.vue';
 
   const userName = ref(localStorage.getItem('userName') || 'Usuário')
-
-  // shallowRef é melhor que ref para guardar componentes inteiros, pois melhora performance. o vue não tenta monitorar o código interno do componente
   const activeComponent = shallowRef(GameList) 
 
   const features = [
 
     { title: 'Recomendações por Mood', component: RecommendationsView },
     { title: 'Comparar Jogos', component: ComparatorView },
-    { title: 'Listas Personalizadas', component: null },
+    { title: 'Listas Personalizadas', component: ListsView  },
     { title: 'Mapa de Gêneros', component: null },
     { title: 'Conquistas', component: null },
     { title: 'Ranking', component: null },

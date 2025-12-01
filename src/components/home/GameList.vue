@@ -80,14 +80,12 @@
 </script>
 
 <style scoped>
-  @import url('https://fonts.googleapis.com/css2?family=Jersey+10&display=swap');
-  
   .game-list-section {
     display: grid; 
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 25px; 
-    padding: 20px 35px;
-    max-width: 1200px;
+    padding: 40px 50px;
+    max-width: 1450px;
     margin: 0 auto;
   }
 
