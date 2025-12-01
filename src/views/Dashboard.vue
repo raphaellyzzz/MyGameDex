@@ -29,6 +29,8 @@
 
   import GameList from '../components/home/GameList.vue';
   import RecommendationsView from './RecommendationsView.vue'; 
+  import ListsView from './ListsView.vue';
+
 
   const userName = ref(localStorage.getItem('userName') || 'Usuário')
 
@@ -39,7 +41,7 @@
 
     { title: 'Recomendações por Mood', component: RecommendationsView },
     { title: 'Comparar Jogos', component: null },
-    { title: 'Listas Personalizadas', component: null },
+    { title: 'Listas Personalizadas', component: ListsView },
     { title: 'Mapa de Gêneros', component: null },
     { title: 'Conquistas', component: null },
     { title: 'Ranking', component: null },
