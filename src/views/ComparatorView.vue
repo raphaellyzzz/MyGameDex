@@ -2,9 +2,9 @@
   <div class="comparator-container">
     
     <div class="header-text">
-      <h1>Arena de Títulos ⚔️</h1>
+      <h1>Comparaçãod de Jogos</h1>
       <p v-if="!store.winner">
-        Coloque os jogos frente a frente e escolha o vencedor.
+        Está em dúvida de qual jogo escolher? Avalie na nossa arena de comparação de jogos
       </p>
       <p v-else class="winner-text">
         Temos um campeão! Reiniciando a arena...
