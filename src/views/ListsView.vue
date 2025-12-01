@@ -191,42 +191,68 @@ function getAssetImage(fileName) {
 }
 
 function isGameInSelectedList(gameId) {
-  if (selectedListIndex.value === null) return false;
-  if (!listStore.lists[selectedListIndex.value]) return false;
+  if (selectedListIndex.value === null) 
+    return false;
+
+  if (!listStore.lists[selectedListIndex.value]) 
+    return false;
+
   const activeList = listStore.lists[selectedListIndex.value];
+  
   return activeList.games.some(g => g.id === gameId);
 }
 
 function getAddButtonText(gameId) {
-  if (selectedListIndex.value === null) return "Selecione uma lista acima";
-  if (isGameInSelectedList(gameId)) return "Adicionado ✓";
+  if (selectedListIndex.value === null)
+    return "Selecione uma lista acima";
+
+  if (isGameInSelectedList(gameId)) 
+    return "Adicionado ✓";
+
   const listName = listStore.lists[selectedListIndex.value]?.title || '';
+
   const truncatedName = listName.length > 15 ? listName.substring(0, 12) + '...' : listName;
+
   return `Adicionar a: ${truncatedName}`;
 }
 
 function handleCreateList() {
-  if (!newList.value.title.trim()) return;
-  listStore.createList(newList.value.title, newList.value.description);
-  newList.value = { title: "", description: "" };
+  if (!newList.value.title.trim()) 
+    return;
+
+  listStore.createList(
+    newList.value.title, newList.value.description
+  );
+
+  newList.value = { 
+    title: "", 
+    description: "" 
+  };
+
   selectedListIndex.value = listStore.lists.length - 1; 
 }
 
 function deleteList(index) {
   if (confirm("Tem certeza que deseja excluir esta lista e seus jogos?")) {
-    listStore.deleteList(index);
-    if (selectedListIndex.value === index) selectedListIndex.value = null;
-    else if (selectedListIndex.value > index) selectedListIndex.value--;
+      listStore.deleteList(index);
+    if (selectedListIndex.value === index) 
+      selectedListIndex.value = null;
+    else if (selectedListIndex.value > index) 
+      selectedListIndex.value--;
   }
 }
 
 function selectList(index) {
-  if (selectedListIndex.value === index) selectedListIndex.value = null;
-  else selectedListIndex.value = index;
+  if (selectedListIndex.value === index) 
+    selectedListIndex.value = null;
+  else 
+    selectedListIndex.value = index;
 }
 
 function addGameToSelectedList(game) {
-  if (selectedListIndex.value === null) return;
+  if (selectedListIndex.value === null) 
+    return;
+
   listStore.addGameToList(selectedListIndex.value, game);
 }
 
@@ -247,12 +273,19 @@ function removeGameFromList(listIndex, gameIndex) {
 
 const editing = ref(false);
 const editIndex = ref(null);
-const editData = ref({ title: "", description: "" });
+
+const editData = ref({ 
+  title: "", 
+  description: "" 
+});
 
 function startEditing(list, index) {
   editing.value = true;
   editIndex.value = index;
-  editData.value = { title: list.title, description: list.description };
+  editData.value = { 
+    title: list.title, 
+    description: list.description 
+  };
 }
 
 function confirmEdit() {

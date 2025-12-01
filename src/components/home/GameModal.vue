@@ -4,7 +4,10 @@
       <button class="close-button" @click="$emit('close')">&times;</button>
       
       <div class="game-details">
-        <img :src="getCoverImage(game.images.cover)" :alt="game.title" class="modal-cover">
+        <div class="cover-wrapper">
+           <img :src="getCoverImage(game.images.cover)" :alt="game.title" class="modal-cover">
+        </div>
+
         <div class="info">
           <h1>{{ game.title }}</h1>
           <p class="description">{{ game.short_description }}</p>
@@ -12,153 +15,207 @@
           <div class="meta-data">
             <div><strong>Desenvolvedor:</strong> {{ game.developer }}</div>
             <div><strong>Publicadora:</strong> {{ game.publisher }}</div>
-            <div><strong>Ano de Lançamento:</strong> {{ game.release_year }}</div>
-            <div><strong>Nota da Comunidade:</strong> <span class="rating">{{ game.community_rating }} / 5</span></div>
+            <div><strong>Ano:</strong> {{ game.release_year }}</div>
+            <div><strong>Nota:</strong> <span class="rating">{{ game.community_rating }} / 5</span></div>
           </div>
 
-          <div class="tags-container">
+          <div class="tags-row">
             <strong>Gêneros:</strong>
-            <span v-for="genre in game.genres" :key="genre" class="tag">{{ genre }}</span>
+            <div class="tags-list">
+              <span v-for="genre in game.genres" :key="genre" class="tag">{{ genre }}</span>
+            </div>
           </div>
 
-          <div class="tags-container">
+          <div class="tags-row">
             <strong>Plataformas:</strong>
-            <span v-for="platform in game.platforms" :key="platform" class="tag platform-tag">{{ platform }}</span>
+            <div class="tags-list">
+              <span v-for="platform in game.platforms" :key="platform" class="tag platform-tag">{{ platform }}</span>
+            </div>
           </div>
+          
+          <hr class="divider">
+
+          <GameJournal :game="game" />
+          
         </div>
       </div>
     </div>
   </div>
 </template>
 
-<script>
-    const images = {};
-    const modules = import.meta.glob('../../assets/game_covers/*', { eager: true });
+<script setup>
+import { defineProps, defineEmits } from 'vue';
 
-    for (const path in modules) {
-        const fileName = path.split('/').pop();
+import GameJournal from './GameJournal.vue'; 
 
-        images[fileName] = modules[path].default;
-    }
+const props = defineProps({
+  game: {
+    type: Object,
+    required: true
+  }
+});
 
-export default {
-  name: 'GameModal',
-  props: {
-    game: {
-      type: Object,
-      required: true
-    }
-  },
-  emits: ['close'], 
-  methods: {
-    getCoverImage(imageName) {
-      return images[imageName];
-    },
-  },
+const emit = defineEmits(['close']);
+
+function getCoverImage(imageName) {
+  return new URL(`../../assets/game_covers/${imageName}`, import.meta.url).href;
 }
 </script>
 
 <style scoped>
-  @import url('https://fonts.googleapis.com/css2?family=Jersey+10&display=swap');
-  
-    .modal-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.8);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-    }
+@import url('https://fonts.googleapis.com/css2?family=Jersey+10&display=swap');
 
-    .modal-content {
-      background-color: white;
-      color: #1C1D1D;
-      padding: 35px;
-      border-radius: 10px;
-      width: 100%;
-      max-width: 800px;
-      position: relative;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.4);
-    }
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+}
 
-    .close-button {
-      position: absolute;
-      top: 10px;
-      right: 15px;
-      font-size: 2rem;
-      font-weight: bold;
-      color: #888;
-      background: none;
-      border: none;
-      cursor: pointer;
-    }
-    
-    .close-button:hover{
-      color: rgb(191, 50, 50);
-      transition: ease 0.7s;
-    }
+.modal-content {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+  padding: 35px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 900px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+  border: 1px solid #333;
+}
 
-    .game-details {
-      display: flex;
-      gap: 30px;
-    }
+.modal-content::-webkit-scrollbar {
+  width: 8px;
+}
 
-    .modal-cover {
-      width: 200px;
-      height: 300px;
-      object-fit: cover;
-      border-radius: 8px;
-    }
+.modal-content::-webkit-scrollbar-track {
+  background: #1e1e1e;
+}
 
-    .info {
-      flex: 1;
-    }
+.modal-content::-webkit-scrollbar-thumb {
+  background: #444;
+  border-radius: 4px;
+}
 
-    .info h1 {
-      margin-top: 0;
-      font-size: 2.5rem;
-      font-family: 'Jersey 10', sans-serif;
-    }
+.close-button {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #888;
+  background: none;
+  border: none;
+  cursor: pointer;
+  line-height: 1;
+  z-index: 10;
+}
 
-    .description {
-      font-size: 1rem;
-      line-height: 1.5;
-      margin-bottom: 20px;
-    }
+.close-button:hover {
+  color: #ff4757;
+  transition: 0.3s;
+}
 
-    .meta-data {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      margin-bottom: 20px;
-      font-size: 0.9rem;
-    }
+.game-details {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+}
 
-    .rating {
-      font-weight: bold;
-      color: #DAA520;
-    }
+.cover-wrapper {
+  flex-shrink: 0;
+}
 
-    .tags-container {
-      margin-bottom: 15px;
-    }
+.modal-cover {
+  width: 240px;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
 
-    .tag {
-      display: inline-block;
-      background-color: #eee;
-      padding: 5px 10px;
-      border-radius: 15px;
-      margin-right: 8px;
-      margin-top: 5px;
-      font-size: 0.85rem;
-    }
+.info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
 
-    .platform-tag {
-      background-color: #1C1D1D;
-      color: white;
-    }
+.info h1 {
+  margin-top: 0;
+  font-size: 3rem;
+  font-family: 'Jersey 10', sans-serif;
+  color: #fff;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.description {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  color: #ccc;
+}
+
+.meta-data {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-bottom: 25px;
+  font-size: 0.95rem;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.rating {
+  font-weight: bold;
+  color: #DAA520;
+}
+
+.tags-row {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.tags-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag {
+  display: inline-block;
+  background-color: #333;
+  color: #ddd;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  border: 1px solid #444;
+}
+
+.platform-tag {
+  background-color: #4CAF50;
+  color: #fff;
+  border-color: #4CAF50;
+  font-weight: bold;
+}
+
+.divider {
+  border: none;
+  height: 1px;
+  background: #333;
+  margin: 30px 0;
+  width: 100%;
+}
 </style>
