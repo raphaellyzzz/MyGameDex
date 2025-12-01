@@ -2,7 +2,7 @@
   <nav>
     <ul>
       <router-link to="/login" class="nav-link">Login</router-link>
-      <li><a href="/" class="nav-link">Games</a></li>
+      <li><a href="/dashboard" class="nav-link">Games</a></li>
     </ul>
     <div class="search-bar">
       <input

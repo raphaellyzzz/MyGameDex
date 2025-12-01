@@ -12,7 +12,8 @@ export const useRandomGameStore = defineStore('randomGame', {
   getters: {
     uniqueGenres: (state) => {
       const genres = new Set();
-      state.allGames.forEach(g => g.genres.forEach(genre => genres.add(genre)));
+      state.allGames.forEach(
+        g => g.genres.forEach(genre => genres.add(genre)));
       return Array.from(genres).sort();
     },
     uniquePlatforms: (state) => {

@@ -41,7 +41,7 @@ export const useRecommendationStore = defineStore('recommendation', {
         this.savedGames.push(game);
         alert(`${game.title} foi salvo no seu perfil!`);
       } else {
-        alert("Este jogo já está na sua lista."); //melhorar conforme criar login!!!!
+        alert("Este jogo já está na sua lista.");
       }
     }
   }
