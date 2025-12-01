@@ -30,6 +30,7 @@
   import GameList from '../components/home/GameList.vue';
   import RecommendationsView from './RecommendationsView.vue'; 
   import ComparatorView from './ComparatorView.vue';
+  import ListsView from './ListsView.vue';
 
   const userName = ref(localStorage.getItem('userName') || 'Usuário')
   const activeComponent = shallowRef(GameList) 

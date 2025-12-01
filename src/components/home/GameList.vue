@@ -81,11 +81,13 @@
 
 <style scoped>
   .game-list-section {
+    width: 100%; 
+    box-sizing: border-box; 
     display: grid; 
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     gap: 25px; 
-    padding: 40px 50px;
-    max-width: 1450px;
+    padding: 30px;
+    max-width: 1600px;
     margin: 0 auto;
   }
 
