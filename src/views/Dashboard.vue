@@ -31,6 +31,7 @@
   import RecommendationsView from './RecommendationsView.vue'; 
   import ComparatorView from './ComparatorView.vue';
   import ListsView from './ListsView.vue';
+  import RandomGameView from './RandomGameView.vue';
 
   const userName = ref(localStorage.getItem('userName') || 'Usuário')
   const activeComponent = shallowRef(GameList) 
@@ -43,7 +44,7 @@
     { title: 'Mapa de Gêneros', component: null },
     { title: 'Conquistas', component: null },
     { title: 'Ranking', component: null },
-    { title: 'Desafio Aleatório', component: null },
+    { title: 'Desafio Aleatório', component: RandomGameView },
     { title: 'Diário de Jogatina', component: null },
     { title: 'Sair', action: 'logout' }
   ]
