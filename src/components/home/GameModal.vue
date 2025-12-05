@@ -34,8 +34,6 @@
           </div>
           
           <hr class="divider">
-
-          <GameJournal :game="game" />
           
         </div>
       </div>
@@ -45,8 +43,6 @@
 
 <script setup>
 import { defineProps, defineEmits } from 'vue';
-
-import GameJournal from './GameJournal.vue'; 
 
 const props = defineProps({
   game: {
